@@ -1,11 +1,11 @@
 <?php
 /**
- * @package     Joomla.Site
- * @subpackage  Templates.protostar
- *
- * @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- */
+* @package     Joomla.Site
+* @subpackage  Templates.protostar
+*
+* @copyright   Copyright (C) 2005 - 2013 Open Source Matters, Inc. All rights reserved.
+* @license     GNU General Public License version 2 or later; see LICENSE.txt
+*/
 
 defined('_JEXEC') or die;
 
@@ -24,170 +24,179 @@ $sitename = $app->getCfg('sitename');
 ?>
 
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Esperance Plouguerneau</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="templates/esperance/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-    <style>
-	    .row,.nav,.tab-content {
-	    	    margin-top:10px;
-	    }
-	    #barrelogo {
-		background-color: white;
-	    }
-    </style>
-    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.bootstrap/js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-	<div id="barrelogo" class="row">
-		<!-- Bannieres des sponsors -->
-		<jdoc:include type="modules" name="position-10" style="bannieres" />
-
-		<!--
-		<div class="col-md-3 col-sm-6 text-center"><img src="http://www.esperanceplouguerneau.fr/images/banners/combustibles%20de%20louest.jpg"></div>
-		<div class="col-md-3 col-sm-6 hidden-xs text-center"><img src="http://www.esperanceplouguerneau.fr/images/banners/sport2000.jpg"></div>
-		<div class="col-md-3 hidden-sm hidden-xs text-center"><img src="http://www.esperanceplouguerneau.fr/images/banners/extbois.jpg"></div>
-		<div class="col-md-3 hidden-sm hidden-xs text-center"><img src="http://www.esperanceplouguerneau.fr/images/banners/maison%20nature%20et%20bois.jpg"></div>
-		-->
-	</div>
-
-  
-    <div class="container">
-	
-	<!-- Menu du haut -->
-	<div id="menuhaut">
-		<jdoc:include type="modules" name="position-1" style="menu" />
-	</div>
-	
-	<!--
-	<ul class="nav nav-pills nav-justified">
-		<li class="active"><a href="#accueil" data-toggle="pill">Accueil</a></li>
-		<li><a href="#u6u9" data-toggle="pill">U6->U9</a></li>
-		<li><a href="#u11" data-toggle="pill">U11</a></li>
-		<li><a href="#u13u15" data-toggle="pill">U13-U15</a></li>
-		<li><a href="#u17" data-toggle="pill">U17</a></li>
-		<li><a href="#seniors" data-toggle="pill">S&eacute;niors</a></li>
-	</ul>
-	-->
-	
-	<div class="row">
-		<div class="col-md-3 hidden-sm hidden-xs text-center">
-			<p><img src="http://www.esperanceplouguerneau.fr/images/stories/logo-esp.jpg"/></p>
-			<p><script src="http://connect.facebook.net/fr_FR/all.js#xfbml=1"></script><fb:like href="http://www.esperanceplouguerneau.fr/" show_faces="true" width="200px"></fb:like></p>
-		</div>
-		<div class="col-md-6 hidden-xs">
-			<object id="o" 
-				classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" 
-				width="100%" 
-				height="250">
-				<param name="movie"
-				value="http://apps.cooliris.com/embed/cooliris.swf" />
-				<param name="allowFullScreen" value="true" />
-				<param name="allowScriptAccess" value="always" />
-				<param name="flashvars" value="feed=api://picasaweb.google.com/?user=esperance.plouguerneau&numRows=2" />
-				<embed type="application/x-shockwave-flash"
-				src="http://apps.cooliris.com/embed/cooliris.swf"
-				flashvars="feed=api://picasaweb.google.com/?user=esperance.plouguerneau&numRows=2"
-				width="100%" 
-				height="250" 
-				allowFullScreen="true"
-				allowScriptAccess="always">
-				</embed>
-			</object>
-
-			<!--
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-					<li class="active" data-target="#carousel-example-generic" data-slide-to="0"></li>
-					<li class="" data-target="#carousel-example-generic" data-slide-to="1"></li>
-					<li class="" data-target="#carousel-example-generic" data-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner">
-					<?php
-						/*
-						include 'pwa.php';
-						$listeUrlPicasa = searchPicasaImages();
-						$i=0;
-						foreach ($listeUrlPicasa as $entry) {
-							$active="";
-							if ($i==0) {
-								$active=" active";
-							}
-							$i++;
-							echo '<div class="item'.$active.'">',PHP_EOL;
-							echo '<img width="100%" src="'.$entry.'"/>',PHP_EOL;
-							echo '</div>',PHP_EOL;
-							
-						}
-						*/
-					?>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/favicon.png">
+		<title>Esp&#233;rance Plouguerneau</title>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<!--<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>-->
+		<style>
+			#accueil {
+				margin-top: 60px;
+			}
+			.banneritem {
+				margin-top: 10px;
+			}
+			h1 {
+				color: #2A6496;
+			}
+			/*.navbar-inverse {
+				background-image: none;
+				background-color: #ADC387;
+			}*/
+			/*h1, h2, h3, h4, h5, h6 {
+				font-family: 'Oswald';
+			}
+			p, div {
+				font-family: 'Oswald';
+			}*/
+		</style>
+	</head>
+	<body data-offset="0" data-target="#navbar-main">
+		<div id="navbar-main">
+			<div class="navbar navbar-inverse navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menuprincipal">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#"><img src="<?php echo $this->baseurl ?>/images/logo-micro.png"/></a>
+					</div>
+					<div class="navbar-collapse collapse" id="menuprincipal">
+						<jdoc:include type="modules" name="position-1"/>
+					</div>
 				</div>
-				<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-				</a>
-				<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a>
 			</div>
-			-->
 		</div>
-		<div class="col-md-3 hidden-sm hidden-xs text-center">
-			<script src="http://connect.facebook.net/fr_FR/all.js#appId=157670407619532&amp;xfbml=1"></script><fb:comments href="http://www.esperanceplouguerneau.fr/" num_posts="1" width="200px"></fb:comments>
-		</div>
-	</div>
-	
-	<div class="tab-content">
-		<div class="tab-pane active" id="accueil" class="row col-md-12 show">
-			<jdoc:include type="component" />
-		</div>
-		<div class="tab-pane" id="u6u9" class="row col-md-12 hidden">
-			U6 U9
-		</div>
-		<div class="tab-pane" id="u11" class="row col-md-12 hidden">
-			Convocation des U11, avec mon super Paol !!
-		</div>
-		<div class="tab-pane" id="u13u15" class="row col-md-12 hidden">
-			U13 U15
-		</div>
-		<div class="tab-pane" id="u17" class="row col-md-12 hidden">
-			U17
-		</div>
-		
-		<div class="tab-pane" id="seniors" class="row col-md-12 hidden">
-			Seniors
-		</div>
-	</div>
+		<div class="container">
+			<div class="row" id="accueil" name="accueil">
+				<div class="col-md-10">
+					<jdoc:include type="component" />
+				</div>
+				<div class="col-md-2 hidden-sm hidden-xs">
+					<p><img src="<?php echo $this->baseurl ?>/images/logo-esp.jpg"/></p>
+					<jdoc:include type="modules" name="position-10"/>
+					<p><script src="http://connect.facebook.net/fr_FR/all.js#xfbml=1"></script><fb:like href="http://www.esperanceplouguerneau.fr/" show_faces="true" width="200px"></fb:like></p>
+				</div>
+			</div>
+			<div class="row">
+				<br>
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li class="active" data-target="#carousel-example-generic" data-slide-to="0"></li>
+							<li class="" data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li class="" data-target="#carousel-example-generic" data-slide-to="2"></li>
+						</ol>
+						<div class="carousel-inner">
+							<jdoc:include type="modules" name="position-2" style="carousel"/>
+						</div>
+						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+			<div class="row" id="u6u9" name="u6u9">
+				<br>
+				<h1>U6 U9</h1>
+				<hr>
+				<div class="col-lg-12">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas nisi nulla, sed dictum libero bibendum ut. Mauris consequat a quam ut euismod. Donec consectetur et mauris et blandit. Maecenas tincidunt nunc et justo blandit aliquet. Phasellus eget massa iaculis, facilisis velit sed, egestas ligula. Sed fringilla in tellus quis aliquam. Curabitur in nulla vulputate massa imperdiet pellentesque. Mauris pellentesque bibendum magna. Donec fermentum odio velit. Pellentesque aliquet diam non interdum congue. Donec congue porta libero, vel vehicula eros. In euismod tincidunt justo sit amet vulputate.
 
-	<ul class="nav nav-pills nav-justified">
-		<li><a href="#">Contact</a></li>
-		<li><a href="#">Le Maillot Vert</a></li>
-		<li><a href="#">Liens</a></li>
-		<li><a href="#">Historique</a></li>
-		<li><a href="#">Organisation</a></li>
-		<li><a href="#">Dirigeants</a></li>
-		<li><a href="#">Stages d'&eacute;t&eacute; 2013</a></li>
-	</ul>
-	
-	<div class="row">
-		<div class="col-md-4 hidden-xs"><img src="http://www.esperanceplouguerneau.fr/images/banners/pronostics.gif"/></div>
-		<div class="col-md-4 hidden-xs"><jdoc:include type="modules" name="footer" style="none" /></div>
-		<div class="col-md-4 hidden-sm hidden-xs"></div>
-	</div>
-    </div>
+					Ut cursus urna in quam consequat, sed egestas justo dapibus. Integer vulputate sollicitudin arcu, vel condimentum felis lacinia eget. Donec in fermentum purus. In bibendum malesuada rhoncus. Proin nec odio id risus elementum mattis. Nunc at risus quam. Ut convallis dui nec libero fermentum, nec auctor nisl placerat. Donec nisl tellus, rutrum eget ligula a, consequat tristique risus. Donec semper vitae mauris id porttitor. Suspendisse eros mauris, blandit a sem at, sodales commodo ante. Quisque vitae justo pulvinar, posuere augue sit amet, luctus ante. Praesent ut orci mauris.
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="templates/esperance/bootstrap/js/bootstrap.min.js"></script>
-  </body>
+					Maecenas felis metus, ornare et quam vitae, bibendum dapibus nunc. Nunc imperdiet dolor ac libero venenatis sagittis. Donec nec nisl posuere, tristique elit eu, egestas quam. Nulla leo nisi, molestie id nunc vel, rhoncus sodales urna. Nulla adipiscing porta egestas. Etiam at quam turpis. Cras at quam ipsum. Aliquam at nulla eu sem consectetur condimentum et sit amet purus.
+
+					Suspendisse ut nunc sem. Proin suscipit ac augue a accumsan. Pellentesque pharetra, lorem sed pharetra suscipit, risus lectus aliquet nunc, in accumsan urna mi scelerisque ipsum. Mauris porttitor rutrum urna in commodo. Nam fermentum et augue sit amet lobortis. Maecenas metus nunc, aliquet quis pretium auctor, suscipit non magna. Suspendisse odio sem, commodo id pharetra nec, eleifend ac magna. Cras sed mauris at leo luctus bibendum. Phasellus fringilla, magna vitae dapibus dictum, lacus purus pellentesque nibh, non adipiscing velit sapien auctor ligula. Phasellus a nisl sed tortor consequat dictum. Integer a tincidunt lacus.
+
+					Curabitur vestibulum, metus eget dapibus rhoncus, ante massa viverra est, id pretium massa purus at sem. Nulla erat urna, sollicitudin eu felis sed, egestas sodales arcu. Morbi felis metus, tempus eget lacinia nec, lobortis quis tortor. Duis aliquam nisi sapien, sit amet pharetra nunc iaculis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ligula elit, elementum non bibendum ultrices, rutrum eu orci. Mauris nec nisi condimentum eros bibendum feugiat aliquet egestas sapien. Nam eget leo sed odio sagittis ultrices. In nibh metus, iaculis et varius eu, pharetra nec velit. Nullam ligula velit, commodo vel odio eget, tincidunt pharetra lorem. Aenean dapibus libero eget nunc consectetur, at iaculis orci cursus. Nunc sagittis tellus nec nisi lacinia mattis sit amet sit amet lectus. Pellentesque tortor odio, placerat ut tortor sit amet, volutpat mattis risus. 
+				</div>
+			</div>
+			<div class="row" id="u11" name="u11">
+				<br>
+				<h1>U11</h1>
+				<hr>
+				<div class="col-lg-12">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas nisi nulla, sed dictum libero bibendum ut. Mauris consequat a quam ut euismod. Donec consectetur et mauris et blandit. Maecenas tincidunt nunc et justo blandit aliquet. Phasellus eget massa iaculis, facilisis velit sed, egestas ligula. Sed fringilla in tellus quis aliquam. Curabitur in nulla vulputate massa imperdiet pellentesque. Mauris pellentesque bibendum magna. Donec fermentum odio velit. Pellentesque aliquet diam non interdum congue. Donec congue porta libero, vel vehicula eros. In euismod tincidunt justo sit amet vulputate.
+
+					Ut cursus urna in quam consequat, sed egestas justo dapibus. Integer vulputate sollicitudin arcu, vel condimentum felis lacinia eget. Donec in fermentum purus. In bibendum malesuada rhoncus. Proin nec odio id risus elementum mattis. Nunc at risus quam. Ut convallis dui nec libero fermentum, nec auctor nisl placerat. Donec nisl tellus, rutrum eget ligula a, consequat tristique risus. Donec semper vitae mauris id porttitor. Suspendisse eros mauris, blandit a sem at, sodales commodo ante. Quisque vitae justo pulvinar, posuere augue sit amet, luctus ante. Praesent ut orci mauris.
+
+					Maecenas felis metus, ornare et quam vitae, bibendum dapibus nunc. Nunc imperdiet dolor ac libero venenatis sagittis. Donec nec nisl posuere, tristique elit eu, egestas quam. Nulla leo nisi, molestie id nunc vel, rhoncus sodales urna. Nulla adipiscing porta egestas. Etiam at quam turpis. Cras at quam ipsum. Aliquam at nulla eu sem consectetur condimentum et sit amet purus.
+
+					Suspendisse ut nunc sem. Proin suscipit ac augue a accumsan. Pellentesque pharetra, lorem sed pharetra suscipit, risus lectus aliquet nunc, in accumsan urna mi scelerisque ipsum. Mauris porttitor rutrum urna in commodo. Nam fermentum et augue sit amet lobortis. Maecenas metus nunc, aliquet quis pretium auctor, suscipit non magna. Suspendisse odio sem, commodo id pharetra nec, eleifend ac magna. Cras sed mauris at leo luctus bibendum. Phasellus fringilla, magna vitae dapibus dictum, lacus purus pellentesque nibh, non adipiscing velit sapien auctor ligula. Phasellus a nisl sed tortor consequat dictum. Integer a tincidunt lacus.
+
+					Curabitur vestibulum, metus eget dapibus rhoncus, ante massa viverra est, id pretium massa purus at sem. Nulla erat urna, sollicitudin eu felis sed, egestas sodales arcu. Morbi felis metus, tempus eget lacinia nec, lobortis quis tortor. Duis aliquam nisi sapien, sit amet pharetra nunc iaculis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ligula elit, elementum non bibendum ultrices, rutrum eu orci. Mauris nec nisi condimentum eros bibendum feugiat aliquet egestas sapien. Nam eget leo sed odio sagittis ultrices. In nibh metus, iaculis et varius eu, pharetra nec velit. Nullam ligula velit, commodo vel odio eget, tincidunt pharetra lorem. Aenean dapibus libero eget nunc consectetur, at iaculis orci cursus. Nunc sagittis tellus nec nisi lacinia mattis sit amet sit amet lectus. Pellentesque tortor odio, placerat ut tortor sit amet, volutpat mattis risus. 
+				</div>
+			</div>
+			<div class="row" id="u13u15" name="u13u15">
+				<br>
+				<h1>U13 U15</h1>
+				<hr>
+				<div class="col-lg-12">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas nisi nulla, sed dictum libero bibendum ut. Mauris consequat a quam ut euismod. Donec consectetur et mauris et blandit. Maecenas tincidunt nunc et justo blandit aliquet. Phasellus eget massa iaculis, facilisis velit sed, egestas ligula. Sed fringilla in tellus quis aliquam. Curabitur in nulla vulputate massa imperdiet pellentesque. Mauris pellentesque bibendum magna. Donec fermentum odio velit. Pellentesque aliquet diam non interdum congue. Donec congue porta libero, vel vehicula eros. In euismod tincidunt justo sit amet vulputate.
+
+					Ut cursus urna in quam consequat, sed egestas justo dapibus. Integer vulputate sollicitudin arcu, vel condimentum felis lacinia eget. Donec in fermentum purus. In bibendum malesuada rhoncus. Proin nec odio id risus elementum mattis. Nunc at risus quam. Ut convallis dui nec libero fermentum, nec auctor nisl placerat. Donec nisl tellus, rutrum eget ligula a, consequat tristique risus. Donec semper vitae mauris id porttitor. Suspendisse eros mauris, blandit a sem at, sodales commodo ante. Quisque vitae justo pulvinar, posuere augue sit amet, luctus ante. Praesent ut orci mauris.
+
+					Maecenas felis metus, ornare et quam vitae, bibendum dapibus nunc. Nunc imperdiet dolor ac libero venenatis sagittis. Donec nec nisl posuere, tristique elit eu, egestas quam. Nulla leo nisi, molestie id nunc vel, rhoncus sodales urna. Nulla adipiscing porta egestas. Etiam at quam turpis. Cras at quam ipsum. Aliquam at nulla eu sem consectetur condimentum et sit amet purus.
+
+					Suspendisse ut nunc sem. Proin suscipit ac augue a accumsan. Pellentesque pharetra, lorem sed pharetra suscipit, risus lectus aliquet nunc, in accumsan urna mi scelerisque ipsum. Mauris porttitor rutrum urna in commodo. Nam fermentum et augue sit amet lobortis. Maecenas metus nunc, aliquet quis pretium auctor, suscipit non magna. Suspendisse odio sem, commodo id pharetra nec, eleifend ac magna. Cras sed mauris at leo luctus bibendum. Phasellus fringilla, magna vitae dapibus dictum, lacus purus pellentesque nibh, non adipiscing velit sapien auctor ligula. Phasellus a nisl sed tortor consequat dictum. Integer a tincidunt lacus.
+
+					Curabitur vestibulum, metus eget dapibus rhoncus, ante massa viverra est, id pretium massa purus at sem. Nulla erat urna, sollicitudin eu felis sed, egestas sodales arcu. Morbi felis metus, tempus eget lacinia nec, lobortis quis tortor. Duis aliquam nisi sapien, sit amet pharetra nunc iaculis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ligula elit, elementum non bibendum ultrices, rutrum eu orci. Mauris nec nisi condimentum eros bibendum feugiat aliquet egestas sapien. Nam eget leo sed odio sagittis ultrices. In nibh metus, iaculis et varius eu, pharetra nec velit. Nullam ligula velit, commodo vel odio eget, tincidunt pharetra lorem. Aenean dapibus libero eget nunc consectetur, at iaculis orci cursus. Nunc sagittis tellus nec nisi lacinia mattis sit amet sit amet lectus. Pellentesque tortor odio, placerat ut tortor sit amet, volutpat mattis risus. 
+				</div>
+			</div>
+			<div class="row" id="u17" name="u17">
+				<br>
+				<h1>U17</h1>
+				<hr>
+				<div class="col-lg-12">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas nisi nulla, sed dictum libero bibendum ut. Mauris consequat a quam ut euismod. Donec consectetur et mauris et blandit. Maecenas tincidunt nunc et justo blandit aliquet. Phasellus eget massa iaculis, facilisis velit sed, egestas ligula. Sed fringilla in tellus quis aliquam. Curabitur in nulla vulputate massa imperdiet pellentesque. Mauris pellentesque bibendum magna. Donec fermentum odio velit. Pellentesque aliquet diam non interdum congue. Donec congue porta libero, vel vehicula eros. In euismod tincidunt justo sit amet vulputate.
+
+					Ut cursus urna in quam consequat, sed egestas justo dapibus. Integer vulputate sollicitudin arcu, vel condimentum felis lacinia eget. Donec in fermentum purus. In bibendum malesuada rhoncus. Proin nec odio id risus elementum mattis. Nunc at risus quam. Ut convallis dui nec libero fermentum, nec auctor nisl placerat. Donec nisl tellus, rutrum eget ligula a, consequat tristique risus. Donec semper vitae mauris id porttitor. Suspendisse eros mauris, blandit a sem at, sodales commodo ante. Quisque vitae justo pulvinar, posuere augue sit amet, luctus ante. Praesent ut orci mauris.
+
+					Maecenas felis metus, ornare et quam vitae, bibendum dapibus nunc. Nunc imperdiet dolor ac libero venenatis sagittis. Donec nec nisl posuere, tristique elit eu, egestas quam. Nulla leo nisi, molestie id nunc vel, rhoncus sodales urna. Nulla adipiscing porta egestas. Etiam at quam turpis. Cras at quam ipsum. Aliquam at nulla eu sem consectetur condimentum et sit amet purus.
+
+					Suspendisse ut nunc sem. Proin suscipit ac augue a accumsan. Pellentesque pharetra, lorem sed pharetra suscipit, risus lectus aliquet nunc, in accumsan urna mi scelerisque ipsum. Mauris porttitor rutrum urna in commodo. Nam fermentum et augue sit amet lobortis. Maecenas metus nunc, aliquet quis pretium auctor, suscipit non magna. Suspendisse odio sem, commodo id pharetra nec, eleifend ac magna. Cras sed mauris at leo luctus bibendum. Phasellus fringilla, magna vitae dapibus dictum, lacus purus pellentesque nibh, non adipiscing velit sapien auctor ligula. Phasellus a nisl sed tortor consequat dictum. Integer a tincidunt lacus.
+
+					Curabitur vestibulum, metus eget dapibus rhoncus, ante massa viverra est, id pretium massa purus at sem. Nulla erat urna, sollicitudin eu felis sed, egestas sodales arcu. Morbi felis metus, tempus eget lacinia nec, lobortis quis tortor. Duis aliquam nisi sapien, sit amet pharetra nunc iaculis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ligula elit, elementum non bibendum ultrices, rutrum eu orci. Mauris nec nisi condimentum eros bibendum feugiat aliquet egestas sapien. Nam eget leo sed odio sagittis ultrices. In nibh metus, iaculis et varius eu, pharetra nec velit. Nullam ligula velit, commodo vel odio eget, tincidunt pharetra lorem. Aenean dapibus libero eget nunc consectetur, at iaculis orci cursus. Nunc sagittis tellus nec nisi lacinia mattis sit amet sit amet lectus. Pellentesque tortor odio, placerat ut tortor sit amet, volutpat mattis risus. 
+				</div>
+			</div>
+			<div class="row" id="seniors" name="seniors">
+				<br>
+				<h1>S&#233;niors</h1>
+				<hr>
+				<div class="col-lg-12">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas nisi nulla, sed dictum libero bibendum ut. Mauris consequat a quam ut euismod. Donec consectetur et mauris et blandit. Maecenas tincidunt nunc et justo blandit aliquet. Phasellus eget massa iaculis, facilisis velit sed, egestas ligula. Sed fringilla in tellus quis aliquam. Curabitur in nulla vulputate massa imperdiet pellentesque. Mauris pellentesque bibendum magna. Donec fermentum odio velit. Pellentesque aliquet diam non interdum congue. Donec congue porta libero, vel vehicula eros. In euismod tincidunt justo sit amet vulputate.
+
+					Ut cursus urna in quam consequat, sed egestas justo dapibus. Integer vulputate sollicitudin arcu, vel condimentum felis lacinia eget. Donec in fermentum purus. In bibendum malesuada rhoncus. Proin nec odio id risus elementum mattis. Nunc at risus quam. Ut convallis dui nec libero fermentum, nec auctor nisl placerat. Donec nisl tellus, rutrum eget ligula a, consequat tristique risus. Donec semper vitae mauris id porttitor. Suspendisse eros mauris, blandit a sem at, sodales commodo ante. Quisque vitae justo pulvinar, posuere augue sit amet, luctus ante. Praesent ut orci mauris.
+
+					Maecenas felis metus, ornare et quam vitae, bibendum dapibus nunc. Nunc imperdiet dolor ac libero venenatis sagittis. Donec nec nisl posuere, tristique elit eu, egestas quam. Nulla leo nisi, molestie id nunc vel, rhoncus sodales urna. Nulla adipiscing porta egestas. Etiam at quam turpis. Cras at quam ipsum. Aliquam at nulla eu sem consectetur condimentum et sit amet purus.
+
+					Suspendisse ut nunc sem. Proin suscipit ac augue a accumsan. Pellentesque pharetra, lorem sed pharetra suscipit, risus lectus aliquet nunc, in accumsan urna mi scelerisque ipsum. Mauris porttitor rutrum urna in commodo. Nam fermentum et augue sit amet lobortis. Maecenas metus nunc, aliquet quis pretium auctor, suscipit non magna. Suspendisse odio sem, commodo id pharetra nec, eleifend ac magna. Cras sed mauris at leo luctus bibendum. Phasellus fringilla, magna vitae dapibus dictum, lacus purus pellentesque nibh, non adipiscing velit sapien auctor ligula. Phasellus a nisl sed tortor consequat dictum. Integer a tincidunt lacus.
+
+					Curabitur vestibulum, metus eget dapibus rhoncus, ante massa viverra est, id pretium massa purus at sem. Nulla erat urna, sollicitudin eu felis sed, egestas sodales arcu. Morbi felis metus, tempus eget lacinia nec, lobortis quis tortor. Duis aliquam nisi sapien, sit amet pharetra nunc iaculis quis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras ligula elit, elementum non bibendum ultrices, rutrum eu orci. Mauris nec nisi condimentum eros bibendum feugiat aliquet egestas sapien. Nam eget leo sed odio sagittis ultrices. In nibh metus, iaculis et varius eu, pharetra nec velit. Nullam ligula velit, commodo vel odio eget, tincidunt pharetra lorem. Aenean dapibus libero eget nunc consectetur, at iaculis orci cursus. Nunc sagittis tellus nec nisi lacinia mattis sit amet sit amet lectus. Pellentesque tortor odio, placerat ut tortor sit amet, volutpat mattis risus. 
+				</div>
+			</div>
+		</div>
+		<div id="footerwrap">
+			<div class="container">
+				<h4>Created by <a href="http://blacktie.co">BlackTie.co</a> - Copyright 2014</h4>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	</body>
 </html>
-

@@ -47,25 +47,13 @@ function modChrome_well($module, &$params, &$attribs)
 		echo "</div>";
 	}
 }
-
-function modChrome_bannieres($module, &$params, &$attribs)
+function modChrome_carousel($module, &$params, &$attribs)
 {
 	if ($module->content)
 	{
 		$contenu = $module->content;
-		$contenu = str_replace("banneritem", "banneritem col-md-3 hidden-sm hidden-xs text-center", $contenu);
+		$contenu = preg_replace("/<div.*custom[^>]*>/i", "", $contenu);
+		$contenu = str_replace("</div></div>", "</div>", $contenu);
 		echo $contenu;
 	}
 }
-
-
-function modChrome_menu($module, &$params, &$attribs)
-{
-	if ($module->content)
-	{
-		$contenu = $module->content;
-		$contenu = str_replace("<a", "<a data-toggle=pill", $contenu);
-		echo $contenu;
-	}
-}
-?>
