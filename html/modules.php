@@ -47,6 +47,19 @@ function modChrome_well($module, &$params, &$attribs)
 		echo "</div>";
 	}
 }
+function modChrome_menu($module, &$params, &$attribs)
+{
+	if ($module->content)
+	{
+		$contenu = $module->content;
+		$contenu = str_replace("deeper", "dropdown", $contenu);
+		$contenu = preg_replace("~<a(.*dropdown-toggle[^>]*>)([^<]*)</a>~i", "<a$1$2<span class=\"caret\"></span></a>", $contenu);
+		$contenu = str_replace("class=\"dropdown-toggle\"", "class=\"dropdown-toggle\" data-toggle=\"dropdown\"", $contenu);
+		$contenu = str_replace("nav-child", "dropdown-menu", $contenu);
+		$contenu = str_replace("ul class=\"dropdown-menu", "ul role=\"menu\" class=\"dropdown-menu", $contenu);
+		echo $contenu;
+	}
+}
 function modChrome_carousel($module, &$params, &$attribs)
 {
 	if ($module->content)
