@@ -30,9 +30,7 @@ $sitename = $app->getCfg('sitename');
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/favicon.png">
 		<title>Esp&#233;rance Plouguerneau</title>
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<!--<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>-->
+		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/assets/css/bootstrap.min.css">
 		<style>
 			#accueil {
 				margin-top: 60px;
@@ -40,19 +38,6 @@ $sitename = $app->getCfg('sitename');
 			.banneritem {
 				margin-top: 10px;
 			}
-			h1 {
-				color: #2A6496;
-			}
-			/*.navbar-inverse {
-				background-image: none;
-				background-color: #ADC387;
-			}*/
-			/*h1, h2, h3, h4, h5, h6 {
-				font-family: 'Oswald';
-			}
-			p, div {
-				font-family: 'Oswald';
-			}*/
 		</style>
 	</head>
 	<body data-offset="0" data-target="#navbar-main">
@@ -75,25 +60,19 @@ $sitename = $app->getCfg('sitename');
 			</div>
 		</div>
 		<div class="container">
-			<div class="row" id="accueil" name="accueil">
-				<div class="col-md-10">
-					<jdoc:include type="component" />
-				</div>
-				<div class="col-md-2 hidden-sm hidden-xs">
-					<p><img src="<?php echo $this->baseurl ?>/images/logo-esp.jpg"/></p>
-					<jdoc:include type="modules" name="position-10"/>
-					<p style="margin-top:10px"><script src="http://connect.facebook.net/fr_FR/all.js#xfbml=1"></script><fb:like href="http://www.esperanceplouguerneau.fr/" show_faces="true" width="200px"></fb:like></p>
-				</div>
-			</div>
 			<?php
 			$menu = & JSite::getMenu();
 			if ($menu->getActive() == $menu->getDefault()) {
 			?>
-			<div class="row">
+			<div class="row" id="accueil" name="accueil">
 				<br>
-				<div class="col-md-2">
+				<div class="col-md-3 hidden-sm hidden-xs">
+					<p><img src="<?php echo $this->baseurl ?>/images/logo-esp.jpg"/></p>
+					<p style="margin-top:10px"><script src="http://connect.facebook.net/fr_FR/all.js#xfbml=1"></script><fb:like href="http://www.esperanceplouguerneau.fr/" show_faces="true" width="200px"></fb:like></p>
 				</div>
-				<div class="col-md-8">
+				<div class="col-xs-1 hidden-sm hidden-md hidden-lg">
+				</div>
+				<div class="col-md-6 col-sm-8 col-xs-10">
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li class="active" data-target="#carousel-example-generic" data-slide-to="0"></li>
@@ -111,9 +90,24 @@ $sitename = $app->getCfg('sitename');
 						</a>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3 col-sm-4 hidden-xs">
+					<jdoc:include type="modules" name="position-10"/>
 				</div>
 			</div>
+			<?php
+			}
+			?>
+			<div class="row" id="contenu" name="contenu">
+				<br>
+				<hr>
+				<div class="col-lg-12">
+					<jdoc:include type="component" />
+				</div>
+			</div>
+			<?php
+			$menu = & JSite::getMenu();
+			if ($menu->getActive() == $menu->getDefault()) {
+			?>
 			<div class="row" id="u6u9" name="u6u9">
 				<br>
 				<h1>U6 U9</h1>
@@ -157,7 +151,6 @@ $sitename = $app->getCfg('sitename');
 			<?php
 			}
 			?>
-			
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
