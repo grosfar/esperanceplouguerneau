@@ -31,6 +31,12 @@ $sitename = $app->getCfg('sitename');
 		<link rel="shortcut icon" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/favicon.png">
 		<title>Esp&#233;rance Plouguerneau</title>
 		<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/assets/css/bootstrap.min.css">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 		<style>
 			#accueil {
 				margin-top: 60px;
@@ -74,6 +80,7 @@ $sitename = $app->getCfg('sitename');
 						<div class="panel-body">
 							<p><img src="<?php echo $this->baseurl ?>/images/logo-esp.jpg"/></p>
 							<p style="margin-top:10px"><script src="http://connect.facebook.net/fr_FR/all.js#xfbml=1"></script><fb:like href="http://www.esperanceplouguerneau.fr/" show_faces="true" width="200px"></fb:like></p>
+							<p><a href="http://www.pronosticsdefolie.fr/accueil/index.php?idChampionnat=1179" target="_blank"><img width="220px" src="http://www.esperanceplouguerneau.fr/images/banners/pronostics.gif"/></a></p>
 						</div>
 					</div>
 				</div>
@@ -190,5 +197,16 @@ $sitename = $app->getCfg('sitename');
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script>
+			<?php
+				// Objectif : afficher l'entete des sections quand on clique sur les menus
+				// cf https://github.com/twbs/bootstrap/issues/1768
+			?>
+			$( document ).ready(function() {
+				var shiftWindow = function() { scrollBy(0, -50) };
+				if (location.hash) shiftWindow();
+				window.addEventListener("hashchange", shiftWindow);
+			});
+		</script>
 	</body>
 </html>
