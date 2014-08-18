@@ -29,7 +29,8 @@
 		<position>moduleuseniors</position>
 		<position>menubootstrap</position>
 		<position>carouselbootstrap</position>
-		<position>contenubody</position>
+		<position>partenaires</position>
+		<position>newsflash</position>
 	</positions>
 	<languages folder="language">
 	</languages>

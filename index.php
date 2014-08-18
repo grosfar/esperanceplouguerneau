@@ -87,12 +87,14 @@ $sitename = $app->getCfg('sitename');
 				<div class="col-xs-1 hidden-sm hidden-md hidden-lg">
 				</div>
 				<div class="col-md-6 col-sm-8 col-xs-10">
+					<?php if ($this->countModules( 'newsflash' )) : ?>
 					<div class="alert alert-success" role="alert">
 						<button type="button" class="close" data-dismiss="alert">
 							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 						</button>
-						Pour cette nouvelle saison 2014/2015, le comité directeur de l'Espérance a décidé de mettre en place une "opération spéciale équipements". Cette opération consiste à proposer un "pack équipements" à un tarif très préférentiel. En effet, le coût d'achat de ce pack est de 70 euros et, sera vendu seulement 30 euros aux licenciés. L'Espérance prenant à sa charge 60% du prix.
+						<jdoc:include type="modules" name="newsflash"/>
 					</div>
+					<?php endif; ?>
 					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li class="active" data-target="#carousel-example-generic" data-slide-to="0"></li>
@@ -116,7 +118,7 @@ $sitename = $app->getCfg('sitename');
 							<h3 class="panel-title">Nos partenaires</h3>
 						</div>
 						<div class="panel-body">
-							<jdoc:include type="modules" name="contenubody"/>
+							<jdoc:include type="modules" name="partenaires"/>
 						</div>
 					</div>
 				</div>
