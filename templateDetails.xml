@@ -2,8 +2,8 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
 <extension version="3.1" type="template" client="site">
 	<name>esperance</name>
-	<version>1.1</version>
-	<creationDate>11/13/2013</creationDate>
+	<version>1.2</version>
+	<creationDate>08/18/2014</creationDate>
 	<author>Raphael Corre</author>
 	<authorEmail>raphael.corre@gmail.com</authorEmail>
 	<copyright>Copyleft</copyright>
@@ -17,38 +17,21 @@
 		<filename>templateDetails.xml</filename>
 		<filename>template_preview.png</filename>
 		<filename>template_thumbnail.png</filename>
-		<folder>css</folder>
+		<folder>assets</folder>
 		<folder>html</folder>
-		<folder>images</folder>
-		<folder>img</folder>
-		<folder>js</folder>
-		<folder>language</folder>
-		<folder>less</folder>
-		<folder>bootstrap</folder>
+		<folder>.git</folder>
 	</files>
 	<positions>
-		<position>banner</position>
-		<position>debug</position>
-		<position>position-0</position>
-		<position>position-1</position>
-		<position>position-2</position>
-		<position>position-3</position>
-		<position>position-4</position>
-		<position>position-5</position>
-		<position>position-6</position>
-		<position>position-7</position>
-		<position>position-8</position>
-		<position>position-9</position>
-		<position>position-10</position>
-		<position>position-11</position>
-		<position>position-12</position>
-		<position>position-13</position>
-		<position>position-14</position>
-		<position>footer</position>
+		<position>moduleu69</position>
+		<position>moduleu11</position>
+		<position>moduleu1315</position>
+		<position>moduleu17</position>
+		<position>moduleuseniors</position>
+		<position>menubootstrap</position>
+		<position>carouselbootstrap</position>
+		<position>contenubody</position>
 	</positions>
 	<languages folder="language">
-		<language tag="en-GB">en-GB/en-GB.tpl_protostar.ini</language>
-		<language tag="en-GB">en-GB/en-GB.tpl_protostar.sys.ini</language>
 	</languages>
 	<config>
 		<fields name="params">

@@ -60,7 +60,7 @@ $sitename = $app->getCfg('sitename');
 						<a class="navbar-brand" href="#"><img src="<?php echo $this->baseurl ?>/images/logo-micro.png"/></a>
 					</div>
 					<div class="navbar-collapse collapse" id="menuprincipal">
-						<jdoc:include type="modules" name="position-1" style="menu"/>
+						<jdoc:include type="modules" name="menubootstrap" style="menu"/>
 					</div>
 				</div>
 			</div>
@@ -100,7 +100,7 @@ $sitename = $app->getCfg('sitename');
 							<li class="" data-target="#carousel-example-generic" data-slide-to="2"></li>
 						</ol>
 						<div class="carousel-inner">
-							<jdoc:include type="modules" name="position-2" style="carousel"/>
+							<jdoc:include type="modules" name="carouselbootstrap" style="carousel"/>
 						</div>
 						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
 							<span class="glyphicon glyphicon-chevron-left"></span>
@@ -116,7 +116,7 @@ $sitename = $app->getCfg('sitename');
 							<h3 class="panel-title">Nos partenaires</h3>
 						</div>
 						<div class="panel-body">
-							<jdoc:include type="modules" name="position-10"/>
+							<jdoc:include type="modules" name="contenubody"/>
 						</div>
 					</div>
 				</div>
@@ -140,7 +140,7 @@ $sitename = $app->getCfg('sitename');
 						<h3 class="panel-title">U6 U9</h3>
 					</div>
 					<div class="panel-body">
-						<jdoc:include type="modules" name="moduleu17" />
+						<jdoc:include type="modules" name="moduleu69" />
 					</div>
 				</div>
 			</div>
@@ -150,7 +150,7 @@ $sitename = $app->getCfg('sitename');
 						<h3 class="panel-title">U11</h3>
 					</div>
 					<div class="panel-body">
-						<jdoc:include type="modules" name="moduleu17" />
+						<jdoc:include type="modules" name="moduleu11" />
 					</div>
 				</div>
 			</div>
@@ -160,7 +160,7 @@ $sitename = $app->getCfg('sitename');
 						<h3 class="panel-title">U13 U15</h3>
 					</div>
 					<div class="panel-body">
-						<jdoc:include type="modules" name="moduleu17" />
+						<jdoc:include type="modules" name="moduleu1315" />
 					</div>
 				</div>
 			</div>
@@ -180,7 +180,7 @@ $sitename = $app->getCfg('sitename');
 						<h3 class="panel-title">S&#233;niors</h3>
 					</div>
 					<div class="panel-body">
-						<jdoc:include type="modules" name="moduleu17" />
+						<jdoc:include type="modules" name="moduleuseniors" />
 					</div>
 				</div>
 			</div>
