@@ -203,7 +203,7 @@ $sitename = $app->getCfg('sitename');
 				// cf https://github.com/twbs/bootstrap/issues/1768
 			?>
 			$( document ).ready(function() {
-				var shiftWindow = function() { scrollBy(0, -50) };
+				var shiftWindow = function() { scrollBy(0, -70) };
 				if (location.hash) shiftWindow();
 				window.addEventListener("hashchange", shiftWindow);
 			});
