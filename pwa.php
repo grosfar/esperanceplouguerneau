@@ -1,35 +1,34 @@
 <?php
 
 function searchPicasaImages() {
-	// Connexion et sélection de la base
-	$mysqli = new mysqli("localhost", "root", "mysql", "test");
-	if ($mysqli->connect_errno) {
-	    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-	}
+	// Connexion à la base
+	$db = JFactory::getDbo();
 	
-	// Exécution des requêtes SQL
-	$query = 'SELECT url,ts FROM picasa_images';
-	$result = $mysqli->query($query);
-	if ($result->num_rows == 0) {
+	$query = $db->getQuery(true);
+	$query->select('url,ts');
+	$query->from('test.picasa_images');
+	$db->setQuery($query);
+	$result = $db->loadObjectList();
+	if (count($result) == 0) {
 		$listeUrlPicasa = searchPicasaImagesAndInsertDao($mysqli);
 	} else {
 		$listeUrlPicasa = array();
 		$dateJour = new DateTime();
-		while ($line = $result->fetch_assoc()) {
-			$dateUrl = new DateTime($line["ts"]);
+		foreach ($result as $line) {
+			$dateUrl = new DateTime($line->ts);
 			$interval = $dateUrl->diff($dateJour);
 			$diffJour = $interval->format('%a');
 			// Si les images en base MySQL ont 1 jour ou plus, on fait une nouvelle recherche dans l'API Picasa
 			if ($diffJour>0) {
-				mysqli_autocommit($mysqli,"FALSE");
-				$query = 'DELETE FROM picasa_images WHERE idpicasa_images>0';
-				$result = $mysqli->query($query);
-				$listeUrlPicasa = searchPicasaImagesAndInsertDao($mysqli);
-				mysqli_commit($mysqli);
-				mysqli_autocommit($mysqli,"TRUE");
+				$query = $db->getQuery(true);
+				$query->delete('test.picasa_images');
+				$query->where('idpicasa_images>0');
+				$db->setQuery($query);
+				$db->execute();
+				$listeUrlPicasa = searchPicasaImagesAndInsertDao();
 				break;
 			}
-			array_push($listeUrlPicasa, $line["url"]);
+			array_push($listeUrlPicasa, $line->url);
 		}		
 	}
 	
@@ -38,9 +37,16 @@ function searchPicasaImages() {
 
 function searchPicasaImagesAndInsertDao($mysqli) {
 	$listeUrlPicasa=searchPicasaImagesDao();
+	// Connexion à la base
+	$db = JFactory::getDbo();
+
 	foreach ($listeUrlPicasa as $entry) {
-		$query = "INSERT INTO picasa_images (url) VALUES('" . $entry . "')";
-		$result = $mysqli->query($query);
+		$query = $db->getQuery(true);
+		$query->insert('test.picasa_images');
+		$query->columns('url');
+		$query->values("'".$entry."'");
+		$db->setQuery($query);
+		$db->execute();
 	}
 	return $listeUrlPicasa;
 }
@@ -61,7 +67,6 @@ function searchPicasaImagesDao() {
 	));
 	// Send the request & save response to $resp
 	$plainListAlbum = curl_exec($curl);
-	//$plainListAlbum = file_get_contents('/home/famille/work/bootstrap/listalbum.xml');
 	$listAlbum = new SimpleXMLElement($plainListAlbum);
 	
 	$dateJour = new DateTime();
@@ -84,7 +89,6 @@ function searchPicasaImagesDao() {
 			));
 			// Send the request & save response to $resp
 			$plainListPhoto = curl_exec($curl);
-			//$plainListPhoto = file_get_contents('/home/famille/work/bootstrap/listphoto.xml');
 			$listPhoto = new SimpleXMLElement($plainListPhoto);
 			
 			foreach ($listPhoto->entry as $entry) {
