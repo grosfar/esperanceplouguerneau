@@ -114,7 +114,7 @@ include 'pwa.php';
 								}
 								$i++;
 							?>
-								<div class="item<?php echo $class ?>"><img src="<?php echo $entry ?>" alt="" width="100%" /></div>
+								<div class="item<?php echo $class ?>"><a href="<?php echo $entry ?>" target="_blank"><img src="<?php echo $entry ?>" alt="" width="100%" /></a></div>
 							<?php
 							}
 							?>
@@ -126,6 +126,7 @@ include 'pwa.php';
 							<span class="glyphicon glyphicon-chevron-right"></span>
 						</a>
 					</div>
+					<p><span class="label label-primary"><a href="http://picasaweb.google.com/esperance.plouguerneau/" target="_blank">Retrouvez toutes nos photos sur Picasa Web</a></span></p>
 				</div>
 				<div class="col-md-3 col-sm-4 hidden-xs">
 					<div class="panel panel-success">
