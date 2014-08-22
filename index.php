@@ -114,7 +114,7 @@ include 'pwa.php';
 								}
 								$i++;
 							?>
-								<div class="item<?php echo $class ?>"><a href="<?php echo $entry ?>" target="_blank"><img src="<?php echo $entry ?>" alt="" width="100%" /></a></div>
+								<div class="item<?php echo $class ?>"><img src="<?php echo $entry ?>" alt="" width="100%" /></div>
 							<?php
 							}
 							?>
@@ -220,10 +220,26 @@ include 'pwa.php';
 				// Objectif : afficher l'entete des sections quand on clique sur les menus
 				// cf https://github.com/twbs/bootstrap/issues/1768
 			?>
+			// Returns a random integer between min (included) and max (excluded)
+			// Using Math.round() will give you a non-uniform distribution!
+			function getRandomInt(min, max) {
+				return Math.floor(Math.random() * (max - min)) + min;
+			}			
+			
 			$( document ).ready(function() {
 				var shiftWindow = function() { scrollBy(0, -70) };
 				if (location.hash) shiftWindow();
 				window.addEventListener("hashchange", shiftWindow);
+			});
+
+			$( window ).load(function() {
+				randomNumber=getRandomInt(0,100);
+				if (randomNumber==0) {
+					$.ajax({
+						url: "../updateimages.php",
+						type: "GET"
+					});
+				}
 			});
 		</script>
 	</body>
