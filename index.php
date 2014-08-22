@@ -46,6 +46,9 @@ include 'pwa.php';
 			.banneritem {
 				margin-top: 10px;
 			}
+			td {
+				border: 1px solid !important;
+			}
 		</style>
 	</head>
 	<body data-offset="0" data-target="#navbar-main">
