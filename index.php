@@ -23,6 +23,10 @@ $itemid   = $app->input->getCmd('Itemid', '');
 $sitename = $app->getCfg('sitename');
 
 include 'pwa.php';
+
+// Include and instantiate the class.
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +88,9 @@ include 'pwa.php';
 						</div>
 						<div class="panel-body">
 							<p><img src="<?php echo $this->baseurl ?>/images/logo-esp.jpg"/></p>
+							<?php if ( !$detect->isMobile() ) : ?>
 							<p style="margin-top:10px"><script src="http://connect.facebook.net/fr_FR/all.js#xfbml=1"></script><fb:like href="http://www.esperanceplouguerneau.fr/" show_faces="true" width="200px"></fb:like></p>
+							<?php endif; ?>
 							<p><a href="http://www.pronosticsdefolie.fr/accueil/index.php?idChampionnat=1179" target="_blank"><img width="220px" src="http://www.esperanceplouguerneau.fr/images/banners/pronostics.gif"/></a></p>
 						</div>
 					</div>
