@@ -44,7 +44,7 @@ $detect = new Mobile_Detect;
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<style>
-			#accueil {
+			#containermain {
 				margin-top: 60px;
 			}
 			.banneritem {
@@ -52,6 +52,9 @@ $detect = new Mobile_Detect;
 			}
 			td {
 				border: 1px solid !important;
+			}
+			#contenu {
+				margin-top: 20px;
 			}
 		</style>
 	</head>
@@ -74,7 +77,7 @@ $detect = new Mobile_Detect;
 				</div>
 			</div>
 		</div>
-		<div class="container">
+		<div class="container" id="containermain">
 			<?php
 			$menu = & JSite::getMenu();
 			if ($menu->getActive() == $menu->getDefault()) {
@@ -151,7 +154,6 @@ $detect = new Mobile_Detect;
 			<?php
 			}
 			?>
-			<br>
 			<div class="row well" id="contenu" name="contenu">
 				<div class="col-lg-12">
 					<jdoc:include type="component" />
@@ -229,6 +231,16 @@ $detect = new Mobile_Detect;
 				// Objectif : afficher l'entete des sections quand on clique sur les menus
 				// cf https://github.com/twbs/bootstrap/issues/1768
 			?>
+			$( window ).load(function() {
+				randomNumber=getRandomInt(0,100);
+				if (randomNumber==0) {
+					$.ajax({
+						url: "../updateimages.php",
+						type: "GET"
+					});
+				}
+			});
+			
 			// Returns a random integer between min (included) and max (excluded)
 			// Using Math.round() will give you a non-uniform distribution!
 			function getRandomInt(min, max) {
@@ -240,17 +252,6 @@ $detect = new Mobile_Detect;
 				if (location.hash) shiftWindow();
 				window.addEventListener("hashchange", shiftWindow);
 			});
-
-			$( window ).load(function() {
-				randomNumber=getRandomInt(0,100);
-				if (randomNumber==0) {
-					$.ajax({
-						url: "../updateimages.php",
-						type: "GET"
-					});
-				}
-			});
-			
 
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-10623558-1']);
