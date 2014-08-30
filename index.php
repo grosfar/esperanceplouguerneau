@@ -94,6 +94,7 @@ $detect = new Mobile_Detect;
 							<?php if ( !$detect->isMobile() ) : ?>
 							<p style="margin-top:10px"><script src="http://connect.facebook.net/fr_FR/all.js#xfbml=1"></script><fb:like href="http://www.esperanceplouguerneau.fr/" show_faces="true" width="200px"></fb:like></p>
 							<?php endif; ?>
+							<p><a href="https://www.facebook.com/esperancede.plouguerneau.5" target="_blank">Retrouvez nous sur <img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/FB-f-Logo__blue_72.png"/></a></p>
 							<p><a href="http://www.pronosticsdefolie.fr/accueil/index.php?idChampionnat=1179" target="_blank"><img width="220px" src="http://www.esperanceplouguerneau.fr/images/banners/pronostics.gif"/></a></p>
 						</div>
 					</div>
